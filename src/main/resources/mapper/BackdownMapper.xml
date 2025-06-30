@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqupt.yyzx.mapper.BackdownMapper">
+
+    <resultMap id="baseResultMap" type="com.cqupt.yyzx.pojo.Backdown">
+        <id column="id" property="id"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="remarks" property="remarks"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="retreat_time" property="retreatTime"/>
+        <result column="retreat_type" property="retreatType"/>
+        <result column="retreat_reason" property="retreatReason"/>
+        <result column="retreat_state" property="retreatState"/>
+        <result column="audit_person" property="auditPerson"/>
+        <result column="auditdate" property="auditdate"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, is_deleted, remarks, customer_id, retreat_time, retreat_type, retreat_reason, retreat_state, audit_person, auditdate
+    </sql>
+</mapper>

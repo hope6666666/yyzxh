@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqupt.yyzx.mapper.NurserecordMapper">
+
+    <resultMap id="baseResultMap" type="com.cqupt.yyzx.pojo.Nurserecord">
+        <id column="id" property="id"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="item_id" property="itemId"/>
+        <result column="nursing_time" property="nursingTime"/>
+        <result column="nursing_content" property="nursingContent"/>
+        <result column="nursing_count" property="nursingCount"/>
+        <result column="user_id" property="userId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, is_delete, customer_id, item_id, nursing_time, nursing_content, nursing_count, user_id
+    </sql>
+    
+    <select id="selectNurseRecordsVo" resultType="NurseRecordVo">
+
+        select nr.id,
+               nr.is_delete,
+               nr.item_id,
+               nr.nursing_time,
+               nr.nursing_content,
+               nr.nursing_count,
+               nr.user_id,
+               u.nickename,
+               u.phone_number,
+               nc.serial_number,
+               nc.nursing_number
+        from nurserecord nr,user u, nursecontent nc
+        where nr.is_delete = 0
+          and nr.customer_id = #{customerId}
+          and nr.user_id = u.id
+          and nr.item_id = nc.id
+    </select>
+</mapper>
