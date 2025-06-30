@@ -14,4 +14,13 @@
     <sql id="Base_Column_List">
         id, room_no, bed_status, bed_no, budding_no, is_deleted
     </sql>
+
+    <select id="selectBedCount" resultType="CwsybedVo">
+        SELECT
+                ( SELECT count( 1 ) FROM bed ) zcw,
+                ( SELECT count( 1 ) FROM bed WHERE bed_status = 1 ) kx,
+                ( SELECT count( 1 ) FROM bed WHERE bed_status = 2 ) yr,
+                ( SELECT count( 1 ) FROM bed WHERE bed_status = 3 ) wc
+    </select>
+
 </mapper>

@@ -16,4 +16,26 @@
     <sql id="Base_Column_List">
         id, item_id, customer_id, level_id, nurse_number, is_deleted, buy_time, maturity_time
     </sql>
+
+    <select id="selectCustomerNurseItemVo" resultType="CustomernurseitemMapper">
+
+        SELECT cni.id,
+               cni.item_id,
+               cni.customer_id,
+               cni.level_id,
+               cni.nurse_number,
+               cni.is_deleted,
+               cni.buy_time,
+               cni.maturity_time,
+               c.customer_name,
+               nc.serial_number,
+               nc.nursing_name,
+               nc.nursing_price
+        FROM customernurseitem cni
+                 JOIN customer c ON (cni.customer_id = c.id)
+                 JOIN nursecontent nc ON (cni.item_id = nc.id)
+        WHERE cni.is_deleted = 0
+          and cni.custormer_id ={customerId}
+    </select>
+
 </mapper>

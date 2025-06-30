@@ -28,6 +28,23 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, is_deleted, customer_name, customer_age, customer_sex, id_card, room_no, budding_no, checkin_date, expiration_date, contact_tel, bed_id, psychosomatic_state, attention, birthday, height, weight, blood_type, filepath, user_id, level_id, family_member
+        id
+        , is_deleted, customer_name, customer_age, customer_sex, id_card, room_no, budding_no, checkin_date, expiration_date, contact_tel, bed_id, psychosomatic_state, attention, birthday, height, weight, blood_type, filepath, user_id, level_id, family_member
     </sql>
+
+    <select id="selectPageVo" resultType="KhxxCustomerVo">
+        SELECT c.id, c.is_deleted, c.customer_name, c.customer_age, c.customer_sex, c.idcard, c.room_no, c.building_no, c.checkin_date, c.expiration_date, c.contact_tel, c.bed_id, c.psychosomatic_state, c.attention, c.birthday, c.height, c.weight, c.blood_type, c.filepath, c.user_id, c.level_id, c.family_member, n.level_name, u.nickname, b.bed_no FROM customer c LEFT JOIN nurselevel n ON (c.level_id = n.id) LEFT JOIN user u ON (c.user_id = u.id) LEFT JOIN bed b ON (c.bed_id = b.id)
+        <where>
+            <if test="manType!=null and manType==1"> and (select count(1) from customernurseitem cni where cni.custormer_id=c.id and cni.is_deleted=0)=0 </if>
+            <if test="manType!=null and manType==2"> and (select count(1) from customernurseitem cni where cni.custormer_id=c.id and cni.is_deleted=0)>0 </if>
+            <!-- <if test="manType!=null and manType==3"> -->
+            <!-- and c.is_deleted=1 -->
+            <!-- </if> -->
+            <if test="customerName!=null and customerName!=''"> and customer_name like concat('%','${customerName}','%') </if>
+            <if test="manType!=null and manType==3"> and user_id =-1 </if>
+            <if test="userId!=null"> and user_id =#{userId} </if>
+            and c.is_deleted=0
+        </where>
+        order by c.id desc
+    </select>
 </mapper>
