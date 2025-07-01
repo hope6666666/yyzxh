@@ -109,6 +109,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--LocalDateTime-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-typehandlers-jsr310</artifactId>
+                <version>1.0.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
@@ -128,8 +135,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.neuedu.yyzx.YyzxApplication</mainClass>
-                    <skip>true</skip>
+                    <mainClass>com.cqupt.yyzx.YyzxApplication</mainClass>
+<!--                    <skip>true</skip>-->
                 </configuration>
                 <executions>
                     <execution>

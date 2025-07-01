@@ -21,7 +21,7 @@
         id, customer_id, outgoing_time, outgoing_reason, is_deleted, expected_return_time, actual_return_time, escorted, relation, escorted_tel, audit_status, audit_person, audit_date
     </sql>
 
-    <select id="selectOutwardList" resultMap="OutwardVo">
+    <select id="selectOutwardList" resultMap="OutWardVo">
         select distinct u.nickname,
         u.phone_number,
         ow.id,

@@ -28,7 +28,7 @@ public class CustomerNurseItemVo {
     private Integer nurseNumber;
 
     @ApiModelProperty(value = "逻辑删除标记（0：显示；1：隐藏）")
-    private Integer isDelete;
+    private Integer isDeleted;
 
     @ApiModelProperty(value = "服务购买时间")
     private Date buyTime;
@@ -46,5 +46,5 @@ public class CustomerNurseItemVo {
     private String nursingName;
 
     @ApiModelProperty(value = "价格")
-    private String servicePrice;
+    private String nursingPrice;
 }

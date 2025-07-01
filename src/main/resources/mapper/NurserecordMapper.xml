@@ -17,7 +17,7 @@
         id, is_delete, customer_id, item_id, nursing_time, nursing_content, nursing_count, user_id
     </sql>
     
-    <select id="selectNurseRecordsVo" resultType="NurseRecordVo">
+    <select id="selectNurseRecordsVo" resultType="NurseRecordsVo">
 
         select nr.id,
                nr.is_delete,

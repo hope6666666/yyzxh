@@ -11,6 +11,19 @@ public class ResultVo<T> {
     private String message;
     private T data;
 
+    // 手动添加setter方法解决Lombok未生效的问题
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
     /**
      * 成功不添加data
      * @return

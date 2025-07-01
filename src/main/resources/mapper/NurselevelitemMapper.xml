@@ -10,5 +10,6 @@
 
     <sql id="Base_Column_List">
         id, level_id, item_id
+
     </sql>
 </mapper>

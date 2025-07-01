@@ -17,8 +17,8 @@
         id, item_id, customer_id, level_id, nurse_number, is_deleted, buy_time, maturity_time
     </sql>
 
-    <select id="selectCustomerNurseItemVo" resultType="CustomernurseitemMapper">
-
+    <!-- src/main/resources/mapper/CustomernurseitemMapper.xml -->
+    <select id="selectCustomerItemVo" resultType="com.cqupt.yyzx.vo.CustomerNurseItemVo">
         SELECT cni.id,
                cni.item_id,
                cni.customer_id,
@@ -35,7 +35,7 @@
                  JOIN customer c ON (cni.customer_id = c.id)
                  JOIN nursecontent nc ON (cni.item_id = nc.id)
         WHERE cni.is_deleted = 0
-          and cni.custormer_id ={customerId}
+          AND cni.customer_id = #{customerId}
     </select>
 
 </mapper>
