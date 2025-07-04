@@ -39,7 +39,7 @@ public class Customer implements Serializable {
     private String roomNo; // 客户房间号
 
     @ApiModelProperty(value = "客户所在楼栋")
-    private String buddingNo; // 客户所在楼栋
+    private String buildingNo; // 客户所在楼栋
 
     @ApiModelProperty(value = "客户入住时间")
     private Date checkinDate; // 客户入住时间

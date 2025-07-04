@@ -13,4 +13,7 @@ public class OutwardDTO {
     private Integer userId; // 用户ID
     @ApiModelProperty(value = "页码")
     private Integer pageSize; // 页码
+
+    @ApiModelProperty(value = "页大小")
+    private Integer pageNum; // 页码
 }

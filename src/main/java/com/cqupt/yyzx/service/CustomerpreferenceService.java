@@ -7,7 +7,7 @@ import com.cqupt.yyzx.pojo.Customerpreference;
 import com.cqupt.yyzx.utils.ResultVo;
 import com.cqupt.yyzx.vo.CustomerPreferenceVo;
 
-public interface CustomerpreferService extends  IService<Customerpreference>{
+public interface CustomerpreferenceService extends  IService<Customerpreference>{
 
     ResultVo<Page<CustomerPreferenceVo>> listCustomerPreferenceVoPage(CustomerPreferenceDTO customerPreferenceDTO) throws Exception;
 

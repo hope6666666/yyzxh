@@ -33,4 +33,6 @@ public class Meal implements Serializable {
 
     @ApiModelProperty(value = "逻辑删除标记 (0.显示 1.隐藏)")
     private Integer isDeleted;
+
+
 }

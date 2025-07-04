@@ -15,6 +15,9 @@ public class NurseItemDTO {
     @ApiModelProperty(value="页码")
     private Integer pageNum;
 
+    @ApiModelProperty(value="每页数量")
+    private Integer pageSize;
+
     @ApiModelProperty(value="名称")
     private String itemName;
 

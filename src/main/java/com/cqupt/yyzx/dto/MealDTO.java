@@ -13,11 +13,13 @@ public class MealDTO {
     private Integer mealId; // 餐食ID
 
     @ApiModelProperty(value = "食谱名称")
-    private String mealType; // 餐食类型（如：早餐、午餐、晚餐）
+    private Integer mealType; // 餐食类型（如：早餐、午餐、晚餐）
 
     @ApiModelProperty(value = "星期")
-    private String weakDay; // 弱日（如：周一、周二等）
+    private String weekDay; // 弱日（如：周一、周二等）
 
     @ApiModelProperty(value = "页码")
     private Integer pageSize; // 页玛
+
+
 }
